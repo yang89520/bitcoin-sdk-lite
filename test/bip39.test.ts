@@ -1,3 +1,13 @@
+// Mock crypto.getRandomValues for bip39
+Object.defineProperty(global, 'crypto', {
+  value: {
+    getRandomValues: (arr) => {
+      const crypto = require('crypto');
+      return crypto.randomBytes(arr.length);
+    }
+  }
+});
+
 const bip39 = require('bip39');
 const crypto_ts = require('crypto');
 

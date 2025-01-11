@@ -1,7 +1,7 @@
 const bip39 = require('bip39');
 const bip32 = require('bip32');
 
-export function createMnemonic (number: number, language: string) {
+export function createMnemonic (number: 12 | 15 | 18 | 21 | 24, language: string) {
   switch (language) {
     case 'chinese_simplified':
       if (number === 12) {
