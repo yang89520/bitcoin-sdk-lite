@@ -21,6 +21,10 @@ describe('btc unit test case', () => {
         // 打印生成的地址
         console.log(account.address);
         // 验证生成的地址是否匹配预期结果（预期结果根据需要设置）
+        // assert.strictEqual(account.address, '1H7AcqzvVQunYftUcJMxF9KUrFayEnf83T');
+        // assert.strictEqual(account.privateKey, '60164bec9512d004af7f71e7ed868c8e9ac2cc6234d8b682037ec80547595f2e');
+        // assert.strictEqual(account.publicKey, '030e93482fd0037d589b08c36bb22afc041338ba444f9f9d7ba129348f9be731c1');
+
     });
 
     test('createAddress by p2pkh testnet', () => {
@@ -39,7 +43,7 @@ describe('btc unit test case', () => {
         // 调用创建地址函数
         const account = createAddress(param);
         // 打印生成的地址
-        console.log(account.address);
+        console.log('createAddress by p2pkh testnet ',account.address);
         // 断言生成的地址与预期匹配
         assert.strictEqual(account.address, 'mwd7uu5uJSM3KnN6KsLL54XoiFBg4JYX7o');
         assert.strictEqual(account.privateKey, '60164bec9512d004af7f71e7ed868c8e9ac2cc6234d8b682037ec80547595f2e');
@@ -61,6 +65,7 @@ describe('btc unit test case', () => {
         };
         // 调用创建地址函数
         const account = createAddress(param);
+        console.log('createAddress by p2wpkh mainnet ',account.address);
         // 断言生成的地址与预期匹配
         assert.strictEqual(account.address, 'bc1qkzkgj7n4n72yhyjmpzs3a6uzy5kj3cmkad2dk7');
         assert.strictEqual(account.privateKey, '60164bec9512d004af7f71e7ed868c8e9ac2cc6234d8b682037ec80547595f2e');
@@ -83,7 +88,7 @@ describe('btc unit test case', () => {
         // 调用创建地址函数
         const account = createAddress(param);
         // 打印账户对象以便调试
-        console.log("account==", account);
+        console.log("reateAddress by p2wpkh testnet ", account.address);
         // 断言生成的地址与预期匹配
         assert.strictEqual(account.address, 'tb1qkzkgj7n4n72yhyjmpzs3a6uzy5kj3cmkht37dd');
         assert.strictEqual(account.privateKey, '60164bec9512d004af7f71e7ed868c8e9ac2cc6234d8b682037ec80547595f2e');
@@ -105,6 +110,7 @@ describe('btc unit test case', () => {
         };
         // 调用创建地址函数
         const account = createAddress(param);
+        console.log('createAddress by p2sh mainnet ',account.address);
         // 断言生成的地址与预期匹配
         assert.strictEqual(account.address, '35iXFVdZb5qxeqxgkZHBaS3KjaP89e79kP');
         assert.strictEqual(account.privateKey, '60164bec9512d004af7f71e7ed868c8e9ac2cc6234d8b682037ec80547595f2e');
@@ -126,6 +132,7 @@ describe('btc unit test case', () => {
         };
         // 调用创建地址函数
         const account = createAddress(param);
+        console.log('createAddress by p2sh testnet ',account.address);
         // 断言生成的地址与预期匹配
         assert.strictEqual(account.address, '2MwGjKEZbCYMJrdbERgu4CP2awvbHyHgyqt');
         assert.strictEqual(account.privateKey, '60164bec9512d004af7f71e7ed868c8e9ac2cc6234d8b682037ec80547595f2e');
@@ -145,6 +152,7 @@ describe('btc unit test case', () => {
             threshold: 2 // 设置阈值为 2（需要 2 个签名）
         }
         const address = createMultiSignAddress(param); // 调用多重签名地址创建函数
+        console.log('p2pkh multi sign 3-2 address ',address);
         assert.strictEqual(address, '36NUkt6FWUi3LAWBqWRdDmdTWbt91Yvfu7'); // 验证生成的地址
     });
 
@@ -161,6 +169,7 @@ describe('btc unit test case', () => {
             threshold: 2 // 设置阈值为 2
         }
         const address = createMultiSignAddress(param); // 调用多重签名地址创建函数
+        console.log('p2wpkh multi sign 3-2 address ',address);
         assert.strictEqual(address, 'bc1qj67d3x5sv3cqdnfje67f9kdlavv7fv6xreznweymj3nqj493pulqz8e6gj'); // 验证生成的地址
     });
 
@@ -177,6 +186,7 @@ describe('btc unit test case', () => {
             threshold: 2 // 设置阈值为 2
         }
         const address = createMultiSignAddress(param); // 调用多重签名地址创建函数
+        console.log('p2sh multi sign 3-2 address ',address);
         assert.strictEqual(address, '3PLy7raPcJCaK4sJyMhWenbzFSZ3YTqo86'); // 验证生成的地址
     });
 });

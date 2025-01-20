@@ -55,6 +55,13 @@ export function buildUnsignTxAndSign (params) {
   
   // 添加输入
   const inputs = signObj.inputs.map(input => {
+
+    console.log(
+      `input.address: ${input.address}`,
+      `input.txid: ${input.txid}`,
+      `input.vout: ${input.vout}`,
+      `input.amount: ${input.amount}`
+    )
     return {
       address: input.address, // 输入地址
       txId: input.txid, // 输入交易ID

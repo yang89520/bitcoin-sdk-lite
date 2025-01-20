@@ -42,20 +42,22 @@ describe('buildAndSignTx test case', () => {
         const data = {
             inputs: [
                 {
-                    address: "1JRWop5ZzYCC3NpYzxghFfUcWPJR9kjdoc",
-                    txid: "368dc2eba45bcbaf6533ccf119edf2342aeb4d503cdecfb269049c353b02c1c3",
-                    amount: 546,
-                    vout: 3750813478263965,
-                }, {
-                    address: "1JRWop5ZzYCC3NpYzxghFfUcWPJR9kjdoc",
+                    address: "1H1oAqmdfTNECrrHFAJ4AhbTUyPcQjrf72",
+                    txid: "209706b97a9aed047df158bf57cfbdad94a5e9bd9ac5261034448ec4590bab8f",
+                    amount: 1,
+                    vout: 0,
+                }, 
+                {
+                    address: "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
                     txid: "209706b97a9aed047df158bf57cfbdad94a5e9bd9ac5261034448ec4590bab8f",
                     amount: 546,
-                    vout: 3750813478263965,
-                }, {
-                    address: "1JRWop5ZzYCC3NpYzxghFfUcWPJR9kjdoc",
+                    vout: 4294967295,
+                }, 
+                {
+                    address: "bc1qkzkgj7n4n72yhyjmpzs3a6uzy5kj3cmkad2dk7",
                     txid: "209706b97a9aed047df158bf57cfbdad94a5e9bd9ac5261034448ec4590bab8f",
                     amount: 546,
-                    vout: 3750813478263965,
+                    vout: 4294967295,
                 },
             ],
             // 手续费：138 stashi
@@ -65,12 +67,12 @@ describe('buildAndSignTx test case', () => {
                     address: "1H1oAqmdfTNECrrHFAJ4AhbTUyPcQjrf72",
                 },
                 {
-                    amount: 500,
-                    address: "1H1oAqmdfTNECrrHFAJ4AhbTUyPcQjrf79",
+                    amount: 546,
+                    address: "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
                 },
                 {
-                    amount: 500,
-                    address: "1H1oAqmdfTNECrrHFAJ4AhbTUyPcQjrf78",
+                    amount: 1000,
+                    address: "bc1qkzkgj7n4n72yhyjmpzs3a6uzy5kj3cmkad2dk7",
                 },
             ],
         };
